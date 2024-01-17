@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
-//const dbConn = require('./dbAdapter.js');
+const dbConn = require('./dbAdapter.js');
 
 const AppRouter = require('./Router/AppRouter.js');
 const AuthRouter = require('./Router/AuthRouter.js');
