@@ -1,0 +1,23 @@
+{
+  "name": "onepackage",
+  "version": "1.0.0",
+  "description": "a test",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codroidstudioindia/nodetest.git"
+  },
+  "keywords": [
+    "no",
+    "keywords"
+  ],
+  "author": "codroidstudio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codroidstudioindia/nodetest/issues"
+  },
+  "homepage": "https://github.com/codroidstudioindia/nodetest#readme"
+}
