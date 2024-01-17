@@ -4,7 +4,7 @@
   "description": "a test",
   "main": "index.js",
   "scripts": {
-    "build:digitalocean": "npm install --production=false && npm run build && npm ci"
+    "start": "node onepackage"
   },
   "repository": {
     "type": "git",
