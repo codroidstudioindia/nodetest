@@ -1,7 +1,7 @@
 
 const http = require('http')
 const port = 8080
- 
+ const appcon = require('./Controller/appController');
 // Create a server object:
 const server = http.createServer(function (req, res) {
  
@@ -18,6 +18,7 @@ server.listen(port, function (error) {
     // Checking any error occur while listening on port
     if (error) {
         console.log('Something went wrong', error);
+        console.log('external', appcon.sum());
     }
     // Else sent message of listening
     else {
