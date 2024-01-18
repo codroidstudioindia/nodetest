@@ -8,9 +8,6 @@ const dbConn = mysql.createConnection({
   database: '',
   port:25060
 });
-dbConn.connect(function (err) {
-  if (err) throw err;
-  console.log("Database Connected!");
-});
+
 
 module.exports = dbConn;  
