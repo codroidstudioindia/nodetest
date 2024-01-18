@@ -1,12 +1,12 @@
 'use strict';
-const mysql = require('mysql2');
+const mysql = require('mysql');
 //local mysql db connection
 const dbConn = mysql.createConnection({
-  host: 'private-db-mysql-blr1-85465-do-user-15622554-0.c.db.ondigitalocean.com',
-  user: 'pb_user',
-  password: 'AVNS_x16-L5jtjtCOjm61PcQ',
+  host: 'localhost',
+  user: 'root',
+  password: 'ciai',
   database: '',
-  port:25060
+  port:3306
 });
 dbConn.connect(function (err) {
   if (err) throw err;
