@@ -1,8 +1,16 @@
 const express = require('express');
 const app = express();
 const port = 8080;
+const mysql = require('mysql');
+const dbConn = mysql.createConnection({
+  host: 'private-db-mysql-blr1-85465-do-user-15622554-0.c.db.ondigitalocean.com',
+  user: 'pb_user',
+  password: 'AVNS_x16-L5jtjtCOjm61PcQ',
+  database: '',
+  port:25060
+});
 
-const dbConn = require('./dbAdapter.js');
+//const dbConn = require('./dbAdapter.js');
 /*
 const AppRouter = require('./Router/AppRouter.js');
 const AuthRouter = require('./Router/AuthRouter.js');
@@ -21,13 +29,12 @@ app.use(express.urlencoded({
 }));
 */
 app.get('/', async (req, res) => {
-
   dbConn.connect(function (err) {
     if (err) {
-      res.send("error: \n", err);
+      res.status(400).send("error: \n", err);
       throw err;
     }
-    res.send("db connected: \n");
+    res.status(200).send("db connected: \n");
   });
 });
 
