@@ -23,31 +23,40 @@ app.use(express.urlencoded({
 }));
 */
 app.get('/', async (req, res) => {
-try {
-  const dbConn = mysql.createConnection({
-    host: req.query.h,
-    user: req.query.u,
-    password: req.query.ps,
-    database: '',
-    port:req.query.p
-  });
+  if (!req.query.h) {
+    console.log('req.query.h: null');
+    res.status(200).send("req.query.h is null");
+  }
+  else {
 
 
-  dbConn.connect(function (err) {
-    if (err) {
-    res.status(520).send("error: \n");
-    console.log('err', err);
-    //throw err;
-    }else{
-    console.log('connected');
 
-    res.status(200).send("db connected: \n");
+    try {
+      const dbConn = mysql.createConnection({
+        host: req.query.h,
+        user: req.query.u,
+        password: req.query.ps,
+        database: '',
+        port: req.query.p
+      });
+
+
+      dbConn.connect(function (err) {
+        if (err) {
+          res.status(520).send("error: \n");
+          console.log('err', err);
+          //throw err;
+        } else {
+          console.log('connected');
+
+          res.status(200).send("db connected: \n");
+        }
+      });
+    } catch (error) {
+      console.log('error', error);
+      //res.status(500).send("error: \n", error);
     }
-  });
-} catch (error) {
-    console.log('error', error);
-    //res.status(500).send("error: \n", error);
-}
+  }
 });
 
 /*
