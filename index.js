@@ -3,6 +3,7 @@ const app = express();
 const port = 8080;
 const mysql = require('mysql2');
 
+
 app.get('/', async (req, res) => {
   if (!req.query.h) {
     console.log('req.query.h: null');
