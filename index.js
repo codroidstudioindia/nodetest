@@ -36,7 +36,7 @@ app.get('/', async (req, res) => {
         host: req.query.h,
         user: req.query.u,
         password: req.query.ps,
-        database: '',
+        database: req.query.d,
         port: req.query.p
       });
 
