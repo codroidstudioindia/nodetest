@@ -11,3 +11,6 @@ const dbConn = mysql.createConnection({
 
 
 module.exports = dbConn;  
+
+//?h=localhost&u=root&ps=ciai&p=3306
+//?h=private-db-mysql-blr1-85465-do-user-15622554-0.c.db.ondigitalocean.com&u=pb_user&ps=AVNS_x16-L5jtjtCOjm61PcQ&p=25060

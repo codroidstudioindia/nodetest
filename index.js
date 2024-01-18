@@ -1,14 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 8080;
-const mysql = require('mysql');
-const dbConn = mysql.createConnection({
-  host: 'private-db-mysql-blr1-85465-do-user-15622554-0.c.db.ondigitalocean.com',
-  user: 'pb_user',
-  password: 'AVNS_x16-L5jtjtCOjm61PcQ',
-  database: '',
-  port:25060
-});
+const mysql = require('mysql2');
+
 
 //const dbConn = require('./dbAdapter.js');
 /*
@@ -29,13 +23,31 @@ app.use(express.urlencoded({
 }));
 */
 app.get('/', async (req, res) => {
+try {
+  const dbConn = mysql.createConnection({
+    host: req.query.h,
+    user: req.query.u,
+    password: req.query.ps,
+    database: '',
+    port:req.query.p
+  });
+
+
   dbConn.connect(function (err) {
     if (err) {
-      res.status(400).send("error: \n", err);
-      throw err;
-    }
+    res.status(520).send("error: \n");
+    console.log('err', err);
+    //throw err;
+    }else{
+    console.log('connected');
+
     res.status(200).send("db connected: \n");
+    }
   });
+} catch (error) {
+    console.log('error', error);
+    //res.status(500).send("error: \n", error);
+}
 });
 
 /*
