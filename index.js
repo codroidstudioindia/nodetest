@@ -14,7 +14,7 @@ var server = app.listen(port, function (error) {
 
   // Checking any error occur while listening on port
   if (error) {
-    console.log('Something went wrong', error);
+    console.log('heloo', error);
   }
   // Else sent message of listening
   else {
