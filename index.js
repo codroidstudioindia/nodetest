@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 
 app.get('/', async (req, res) => {
 
- res.status(200).send('updated dasdasdasd homepage');
+ res.status(200).send('heloo');
 
 });
 
