@@ -1,17 +1,19 @@
 {
-  "dependencies": {
-    "express": "^4.18.2",
-    "mysql2": "^3.7.1"
-  },
   "name": "nodetest",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codroidstudioindia/nodetest.git"
+  },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "bugs": {
+    "url": "https://github.com/codroidstudioindia/nodetest/issues"
+  },
+  "homepage": "https://github.com/codroidstudioindia/nodetest#readme"
 }
